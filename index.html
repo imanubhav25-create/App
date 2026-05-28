@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET PG Premium</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="theme-neon">
+
+<div class="bg-animation"></div>
+
+<div class="landing-container">
+
+<div class="glass-card hero-card">
+
+<h1>NEET PG 2026</h1>
+
+<p class="tagline">
+Your Premium Medical Preparation Dashboard
+</p>
+
+<div id="countdown" class="countdown"></div>
+
+<div class="button-group">
+
+<a href="dashboard.html" class="premium-btn">
+Enter Dashboard
+</a>
+
+<a href="planner.html" class="premium-btn secondary">
+Daily Planner
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const examDate = new Date("August 29, 2026 00:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+const distance = examDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("countdown").innerHTML =
+`${days}d ${hours}h ${minutes}m`;
+
+}, 1000);
+
+</script>
+
+</body>
+</html>
