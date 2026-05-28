@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET PG Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="theme-neon">
+
+<div class="dashboard-layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar glass-card">
+
+<h2 class="logo">NEET PG</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="planner.html">Planner</a>
+<a href="gt.html">GT Tracker</a>
+<a href="pyq.html">PYQ Tracker</a>
+<a href="revision.html">Revision</a>
+<a href="analytics.html">Analytics</a>
+<a href="settings.html">Settings</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+<!-- TOP BAR -->
+
+<div class="topbar glass-card">
+
+<div class="clock-box">
+<div id="digitalClock"></div>
+<div id="dateBox"></div>
+</div>
+
+<div class="countdown-box">
+<h3>NEET PG Countdown</h3>
+<div id="countdown"></div>
+</div>
+
+<div class="streak-box">
+<h3>Study Streak</h3>
+<div id="streak">0 Days 🔥</div>
+</div>
+
+</div>
+
+<!-- GRID -->
+
+<div class="dashboard-grid">
+
+<!-- POMODORO -->
+
+<div class="glass-card widget">
+
+<h2>Focus Timer</h2>
+
+<div id="timer">25:00</div>
+
+<div class="timer-buttons">
+
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+
+</div>
+
+</div>
+
+<!-- DAILY TARGET -->
+
+<div class="glass-card widget">
+
+<h2>Daily Targets</h2>
+
+<div class="target-input">
+
+<input type="text" id="targetText" placeholder="Add target">
+
+<button onclick="addTarget()">+</button>
+
+</div>
+
+<ul id="targetList"></ul>
+
+</div>
+
+<!-- STUDY HOURS -->
+
+<div class="glass-card widget">
+
+<h2>Today's Study Hours</h2>
+
+<div class="hours-display">
+<span id="studyHours">0</span> hrs
+</div>
+
+<input type="range" min="0" max="18" value="0" id="hoursSlider">
+
+</div>
+
+<!-- SUBJECT TRACKER -->
+
+<div class="glass-card widget">
+
+<h2>Subject Progress</h2>
+
+<div class="subject">
+
+<label>Medicine</label>
+<progress value="60" max="100"></progress>
+
+</div>
+
+<div class="subject">
+
+<label>Pathology</label>
+<progress value="40" max="100"></progress>
+
+</div>
+
+<div class="subject">
+
+<label>Pharmacology</label>
+<progress value="80" max="100"></progress>
+
+</div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="glass-card widget chart-widget">
+
+<h2>Weekly Progress</h2>
+
+<canvas id="progressChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
